@@ -1,13 +1,22 @@
 import Link from "next/link";
+import Head from "next/head"
 import Layout from "../components/Layout";
 
-const IndexPage = () => (
-  <Layout title="Home | Next.js + TypeScript Example">
-    <h1>Hello Next.js 👋</h1>
-    <p>
-      <Link href="/about">About</Link>
-    </p>
-  </Layout>
-);
+const IndexPage = () => {
+  return(
+    <div className="flex min-h-screen flex-col items-center justify-center py-2">
+      <Head>
+        <title>Home</title>
+      </Head>
+      Lets Build Netflix
+      <main>
+        {/* Banner */}
+        <section>
+          {/* row */}
+        </section>
+      </main>
+    </div>
+  )
+  };
 
 export default IndexPage;
