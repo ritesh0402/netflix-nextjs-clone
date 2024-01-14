@@ -1,30 +1,66 @@
-# TypeScript Next.js example
+# Netflix NextJS Clone
 
-This is a really simple project that shows the usage of Next.js with TypeScript.
+This is a Netflix clone project using Next.js with TypeScript.
 
-## Deploy your own
+## Creating NextJS App
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-typescript)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-typescript&project-name=with-typescript&repository-name=with-typescript)
-
-## How to use it?
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+Step 1: Create your project
+Start by creating a new Next.js project if you don’t have one set up already. The most common approach is to use Create Next App.
 
 ```bash
-npx create-next-app --example with-typescript with-typescript-app
+npx create-next-app netflix-nextjs-clone --example with-typescript
+cd netflix-nextjs-clone
 ```
+
+Step 2: Install Tailwind CSS
+Install tailwindcss and its peer dependencies via npm, and then run the init command to generate both tailwind.config.js and postcss.config.js.
 
 ```bash
-yarn create next-app --example with-typescript with-typescript-app
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
 ```
+
+Step 3: Configure your template paths
+Add the paths to all of your template files in your tailwind.config.js file.
+
+Code:
+
+```
+/** @type {import('tailwindcss').Config} \*/
+module.exports = {
+content: [
+"./app/**/_.{js,ts,jsx,tsx,mdx}",
+"./pages/\*\*/_.{js,ts,jsx,tsx,mdx}",
+"./components/\*_/_.{js,ts,jsx,tsx,mdx}",
+
+    // Or if using `src` directory:
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
+
+],
+theme: {
+extend: {},
+},
+plugins: [],
+}
+```
+
+Step 4: Add the Tailwind directives to your CSS
+Add the @tailwind directives for each of Tailwind’s layers to your globals.css file.
+
+Code:
+
+```
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+Step 5: Start your build process
+Run your build process with npm run dev.
 
 ```bash
-pnpm create next-app --example with-typescript with-typescript-app
+npm run dev
 ```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
 
 ## Notes
 
@@ -45,54 +81,3 @@ When we run `next dev` the next time, Next.js will start looking for any `.ts` o
 Next.js has built-in TypeScript declarations, so we'll get autocompletion for Next.js' modules straight away.
 
 A `type-check` script is also added to `package.json`, which runs TypeScript's `tsc` CLI in `noEmit` mode to run type-checking separately. You can then include this, for example, in your `test` scripts.
-
-Creating NextJS App
-
-Step 1: Create your project
-Start by creating a new Next.js project if you don’t have one set up already. The most common approach is to use Create Next App.
-
-Command:
-npx create-next-app netflix-nextjs-clone --example with-typescript
-cd netflix-nextjs-clone
-
-Step 2: Install Tailwind CSS
-Install tailwindcss and its peer dependencies via npm, and then run the init command to generate both tailwind.config.js and postcss.config.js.
-
-Command:
-npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init -p
-
-Step 3: Configure your template paths
-Add the paths to all of your template files in your tailwind.config.js file.
-
-Code:
-/** @type {import('tailwindcss').Config} \*/
-module.exports = {
-content: [
-"./app/**/_.{js,ts,jsx,tsx,mdx}",
-"./pages/\*\*/_.{js,ts,jsx,tsx,mdx}",
-"./components/\*_/_.{js,ts,jsx,tsx,mdx}",
-
-    // Or if using `src` directory:
-    "./src/**/*.{js,ts,jsx,tsx,mdx}",
-
-],
-theme: {
-extend: {},
-},
-plugins: [],
-}
-
-Step 4: Add the Tailwind directives to your CSS
-Add the @tailwind directives for each of Tailwind’s layers to your globals.css file.
-
-Code:
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-Step 5: Start your build process
-Run your build process with npm run dev.
-
-Command:
-npm run dev
