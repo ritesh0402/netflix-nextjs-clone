@@ -1,9 +1,11 @@
 import '../styles/globals.css'
-import IndexPage from './index'
+import type { AppProps } from 'next/app'
 import React from 'react'  
-function App() {
+function App({ Component, pageProps }: AppProps) {
    return (
-      <IndexPage />
+      <div>
+         <Component {...pageProps} />
+      </div>
    )
 }
 
