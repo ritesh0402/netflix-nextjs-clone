@@ -8,6 +8,11 @@ module.exports = {
             hostname: 'image.tmdb.org',
             pathname: '**',
          },
+         {
+            protocol: 'https',
+            hostname: 'rb.gy',
+            pathname: '**',
+         },
       ],
    },
 }
