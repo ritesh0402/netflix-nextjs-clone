@@ -1,6 +1,7 @@
 # Netflix NextJS Clone
 
 This is a Netflix clone project using Next.js with TypeScript.
+[Netflix NextJS Clone](https://netflix-nextjs-clone-dusky.vercel.app/)
 
 ## Creating NextJS App
 
